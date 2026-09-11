@@ -22,7 +22,6 @@ def order_details(request, order_id):
     try:
         conversation = Conversation.objects.get(user=request.user, order=order_id)
         previous_messages = conversation.messages.order_by("created_at")
-        print(previous_messages)
     except Conversation.DoesNotExist:
         conversation = None
         previous_messages = []

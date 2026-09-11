@@ -1,6 +1,8 @@
 from orders.models import Order, RefundRequest
 from django.utils import timezone
+from datetime import timedelta
 from .tracking_data import DELIVERY_DATA
+
 
 
 def get_order_details(order_id):
@@ -50,3 +52,32 @@ def get_delivery_status(tracking_id, carrier):
     result['tracking_number'] = tracking_id
     result['carrier'] = carrier
     return result
+
+def get_customer_risk_profile(user_id):
+    refunds = RefundRequest.objects.filter(user=user_id)
+    orders = Order.objects.filter(user=user_id)
+
+    # Refund requests since last 90 days :
+    recent_refunds = refunds.filter(created_at__gte=timezone.now() - timedelta(days=90)).count()
+    denied = refunds.filter(status="denied").count()
+    approved = refunds.filter(status="approved").count()
+    pending = refunds.filter(status="pending").count()
+
+    total_refund = refunds.count()
+    total_orders = orders.count()
+
+    if total_orders > 0:
+        refund_to_orders_ratio = round(total_refund / total_orders, 2)
+    else:
+        refund_to_orders_ratio = 0
+
+    return {
+        "user_id": user_id,
+        "total_orders": total_orders,
+        "total_refund_requests": total_refund,
+        "refund_last_90_days": recent_refunds,
+        "denied": denied,
+        "approved": approved,
+        "pending": pending,
+        "refund_to_order_ratio": refund_to_orders_ratio
+    }

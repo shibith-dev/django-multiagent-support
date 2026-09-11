@@ -1,7 +1,12 @@
 from anthropic import Anthropic
 from google.genai import types
 from django.conf import settings
-from .tools import get_order_details, get_refund_history, get_delivery_status
+from .tools import (
+    get_order_details,
+    get_refund_history,
+    get_delivery_status,
+    get_customer_risk_profile,
+)
 from .models import Conversation
 
 # initialize gemini client
@@ -55,6 +60,32 @@ Important rules :
  - Base decision on facts - Not emotions
  - Always give a specific reason for your decision
  - Keep your response consice and professional
+"""
+
+# RISK - SYSTEM PROMPT :
+RISK_SYSTEM_PROMPT = """
+You are a fraud risk analyst at CoolBreeze AC.
+A support manager has sent you a customer profile for risk assesment.
+
+Your Job:
+ - Analyse the customer's order and refund patterns
+ - Identify suspicious behaviour
+ - Return a clear risk verdict
+
+Risk Levels:
+ - LOW - genuine customer, normal behaviour
+ - MEDIUM - Some suspicious signals, proceed with caution
+ - HIGH - Clear fraud pattern, recommend denial
+
+Your response format :
+ - Risk Level: LOW / MEDIUM / HIGH
+ - Key Signals: What you found suspicious or genuine
+ - Recomendation: What manager should do
+
+Important : 
+ - Be objective - base verdict on data only
+ - One bad refund does not make someone fraudulent 
+ - Look for patterns - not isolated incidents
 """
 
 
@@ -114,12 +145,46 @@ SUPPORT_TOOLS = [
             "properties": {
                 "case_summary": {
                     "type": "string",
-                    "description": "Comeplete case summary including order details, refund history and customer complaint"
+                    "description": "Comeplete case summary including order details, refund history and customer complaint",
                 }
             },
-            "required": ["case_summary"]
-        }
+            "required": ["case_summary"],
+        },
     },
+]
+
+MANAGER_TOOLS = [
+    {
+        "name": "assess_fraud_risk",
+        "description":"Conusult the risk agent to assess fraud risk for a customer. User this when refund request looks suspicious or customer has mulitple refund requests. Pass the user_id to get a risk verdict.",
+        "input_schema":{
+            "type":"object",
+            "properties": {
+                "user_id":{
+                    "type": "integer",
+                    "description": "The user ID to assess fraud risk for"
+                }
+            },
+            "required": ["user_id"]
+        }
+    }
+]
+
+RISK_TOOLS = [
+    {
+        "name": "get_customer_risk_profile",
+        "description": "Get complete risk profile for a customer including order history, refund, patterns, and ratio. Use this to assess fraud risk.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "user_id": {
+                    "type": "integer",
+                    "description": "The user ID to assess risk for",
+                }
+            },
+            "required": ["user_id"],
+        },
+    }
 ]
 
 
@@ -127,12 +192,21 @@ SUPPORT_TOOLS = [
 def execute_tool(tool_name, tool_input):
     if tool_name == "get_order_details":
         return get_order_details(tool_input["order_id"])
+    
     if tool_name == "get_refund_history":
         return get_refund_history(tool_input["user_id"])
+    
     if tool_name == "get_delivery_status":
         return get_delivery_status(tool_input["tracking_number"], tool_input["carrier"])
+    
     if tool_name == "escalate_to_manager":
         return run_manager_agent(tool_input["case_summary"])
+    
+    if tool_name == "assess_fraud_risk":
+        return run_risk_agent(tool_input["user_id"])
+    
+    if tool_name == "get_customer_risk_profile":
+        return get_customer_risk_profile(tool_input["user_id"])
 
 
 # Agent Loop - While loop that loops until the task is done
@@ -151,7 +225,8 @@ def run_support_agent(user_message, conversation_id, order_id, user_id):
         response = client.messages.create(
             model=model,
             max_tokens=1024,
-            system=SUPPORT_SYSTEM_PROMPT + f"\n\nContext: This conversation is about the order id: {order_id}, user: {user_id}",
+            system=SUPPORT_SYSTEM_PROMPT
+            + f"\n\nContext: This conversation is about the order id: {order_id}, user: {user_id}",
             tools=SUPPORT_TOOLS,
             messages=conversation_messages,
         )
@@ -165,34 +240,31 @@ def run_support_agent(user_message, conversation_id, order_id, user_id):
                     # execute the tool :
                     result = execute_tool(block.name, block.input)
 
-                    tool_result.append({
-                        "type": "tool_result",
-                        "tool_use_id": block.id,
-                        "content": str(result)
-                    })
-            conversation_messages.append({
-                "role": "assistant",
-                "content": response.content
-            })
-            conversation_messages.append({
-                "role": "user",
-                "content": tool_result 
-            })
+                    tool_result.append(
+                        {
+                            "type": "tool_result",
+                            "tool_use_id": block.id,
+                            "content": str(result),
+                        }
+                    )
+            conversation_messages.append(
+                {"role": "assistant", "content": response.content}
+            )
+            conversation_messages.append({"role": "user", "content": tool_result})
         else:
             return response.content[0].text
 
 
 def run_manager_agent(case_summary):
-    manager_messages = [{
-        "role": "user", "content": case_summary
-    }]
+    manager_messages = [{"role": "user", "content": case_summary}]
 
     while True:
         response = client.messages.create(
             model=model,
             max_tokens=1024,
             system=MANAGER_SYSTEM_PROMPT,
-            messages=manager_messages
+            tools=MANAGER_TOOLS,
+            messages=manager_messages,
         )
 
         if response.stop_reason == "tool_use":
@@ -201,21 +273,56 @@ def run_manager_agent(case_summary):
                 if block.type == "tool_use":
                     result = execute_tool(block.name, block.input)
 
-                    tool_results.append({
-                        'type': 'tool_result',
-                        'tool_use_id': block.id,
-                        'content': str(result)
-                    })
+                    tool_results.append(
+                        {
+                            "type": "tool_result",
+                            "tool_use_id": block.id,
+                            "content": str(result),
+                        }
+                    )
 
-            manager_messages.append({
-                'role': 'assistant',
-                'content': response.content
-            })
+            manager_messages.append({"role": "assistant", "content": response.content})
 
-            manager_messages.append({
-                "role": "user",
-                "content": tool_results
-            })
+            manager_messages.append({"role": "user", "content": tool_results})
         else:
-             return response.content[0].text
+            return response.content[0].text
 
+
+def run_risk_agent(user_id):
+
+    risk_messages = [
+        {
+            "role": "user",
+            "content": f"please assess the fraud risk for user ID {user_id}. Use your tool to get their profile and return a verdict.",
+        }
+    ]
+
+    while True:
+        response = client.messages.create(
+            model=model,
+            max_tokens=1024,
+            system=RISK_SYSTEM_PROMPT,
+            tools=RISK_TOOLS,
+            messages=risk_messages,
+        )
+
+        if response.stop_reason == "tool_use":
+            tool_messages = []
+            for block in response.content:
+                if block.type == "tool_use":
+                    result = execute_tool(block.name, block.input)
+
+                    tool_messages.append(
+                        {
+                            "type": "tool_result",
+                            "tool_use_id": block.id,
+                            "content": str(result),
+                        }
+                    )
+
+            risk_messages.append({"role": "assistant", "content": response.content})
+
+            risk_messages.append({"role": "user", "content": tool_messages})
+
+        else:
+            return response.content[0].text
