@@ -331,15 +331,17 @@
 
           <!-- Chat area -->
           <div id="chat-messages" class="chat-messages p-3 d-flex flex-column gap-2">
-            <div class="customer-message p-2 px-3" style="font-size: 13px;max-width: 85%;">
-              i have an issue
+            {% if conversation %}
+            {% for message in previous_messages %}
+            <div class="{%if message.role == 'assistant'%}agent-message{%else%}customer-message{%endif%} p-2 px-3" style="font-size: 13px; max-width: 85%;">
+              {{message.content}}
             </div>
-            <!-- <div class="agent-message p-2 px-3" style="font-size: 13px;max-width: 85%;">
-              Hii
-            </div> -->
-            <div class="agent-message p-2 px-3" style="font-size: 13px; max-width: 85%;">
-              Hi shibith, I'm Maya, How can I help you with your order today?
+            {% endfor %}
+            {%else%}
+            <div class="agent-message p-2 px-3" style="font-size: 13px; max-width: 85%; white-space: normal;">
+              Hi {{user.username}}, I'm Maya, How can I help you with your order today?
             </div>
+            {% endif %}
           </div>
 
           <!-- Chat footer -->
@@ -355,6 +357,23 @@
   </div>
   <script>
 
+    // Show typing while AI is generating response
+    function showTyping() {
+      const messages = document.getElementById('chat-messages')
+      messages.insertAdjacentHTML("beforeend", `
+      <div id="typing-indicator" class="agent-message p-2" style="font-size: 13px; max-width:85%; max-height: fit-content; white-space: normal;">
+        Typing...
+      </div>
+      `)
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    // Hide typing when View is ready to display response
+    function hideTyping() {
+      document.getElementById('typing-indicator').remove()
+    }
+
+    // Append new message from user to the UI 
     function appendMessage(text, type) {
       const messages = document.getElementById('chat-messages')
       const div = document.createElement("div");
@@ -365,19 +384,54 @@
       div.innerText = text;
 
       messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
     }
 
-    function sendMessage() {
+    // Function to send message from client to the server 
+    async function sendMessage() {
       const input = document.getElementById("chat-input");
       const message = input.value.trim();
       // don't send empty message
-      if(!message) return;
-      appendMessage(message, 'user');
+      if (!message) return;
+      appendMessage(message, 'customer');
       input.value = '';
+      input.disabled = true;
+
+      const typing_timeout = setTimeout(() => showTyping(), 1000) // show typing after seconds
+
+      // send message to django view
+      try {
+        const response = await fetch("/support/chat/{{order.id}}", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": "{{ csrf_token }}"
+          },
+          body: JSON.stringify({
+            message: message
+          })
+        });
+        const data = await response.json();
+
+        hideTyping();
+
+        appendMessage(data.response, 'agent');
+        input.disabled = false;
+        input.focus();
+
+      } catch (error) {
+        console.error("error :", error);
+        appendMessage("Sorry something went wrong.", "agent");
+        input.disabled = false;
+        input.focus();
+      } finally {
+        clearTimeout(typing_timeout);
+        hideTyping();
+      }
     }
 
-    document.getElementById('chat-input').addEventListener("keydown", function(e){
-      if(e.key === "Enter") sendMessage()
+    document.getElementById('chat-input').addEventListener("keydown", function (e) {
+      if (e.key === "Enter") sendMessage()
     })
 
     function openChatbox() {
