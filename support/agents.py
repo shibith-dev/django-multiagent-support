@@ -1,5 +1,4 @@
 from anthropic import Anthropic
-from google.genai import types
 from django.conf import settings
 from .tools import (
     get_order_details,
@@ -7,7 +6,7 @@ from .tools import (
     get_delivery_status,
     get_customer_risk_profile,
 )
-from .models import Conversation
+from .models import Conversation, AgentLog
 
 # initialize gemini client
 client = Anthropic(api_key=settings.ANTHROPIC_API_KEY)
@@ -34,7 +33,7 @@ Your Personality :
 Important rules :
  - Always check order details first before responding
  - Never approve or deny a refund yourself
- - If refund decision id needed - tell customer you are checking with your team.
+ - If refund decision is needed - tell customer you are checking with your team.
 
 """
 
@@ -59,13 +58,13 @@ Important rules :
  - Be fair but firm
  - Base decision on facts - Not emotions
  - Always give a specific reason for your decision
- - Keep your response consice and professional
+ - Keep your response concise and professional
 """
 
 # RISK - SYSTEM PROMPT :
 RISK_SYSTEM_PROMPT = """
 You are a fraud risk analyst at CoolBreeze AC.
-A support manager has sent you a customer profile for risk assesment.
+A support manager has sent you a customer profile for risk assessment.
 
 Your Job:
  - Analyse the customer's order and refund patterns
@@ -80,7 +79,7 @@ Risk Levels:
 Your response format :
  - Risk Level: LOW / MEDIUM / HIGH
  - Key Signals: What you found suspicious or genuine
- - Recomendation: What manager should do
+ - Recommendation: What manager should do
 
 Important : 
  - Be objective - base verdict on data only
@@ -93,7 +92,7 @@ Important :
 SUPPORT_TOOLS = [
     {
         "name": "get_order_details",
-        "description": "Fetch complete order details includig status, carrier, tracking number and days since order was placed. Use this when customer mentions their order or complains about delivery.",
+        "description": "Fetch complete order details including status, carrier, tracking number and days since order was placed. Use this when customer mentions their order or complains about delivery.",
         "input_schema": {
             "type": "object",
             "properties": {
@@ -139,13 +138,13 @@ SUPPORT_TOOLS = [
     },
     {
         "name": "escalate_to_manager",
-        "description": "Escalate the case to the manager for a refund decision. Use this when cusotmer requests a refund or compensation. Prepare a detailed case summary including order details, refund history and customer complaint before escalating.",
+        "description": "Escalate the case to the manager for a refund decision. Use this when customer requests a refund or compensation. Prepare a detailed case summary including order details, refund history and customer complaint before escalating.",
         "input_schema": {
             "type": "object",
             "properties": {
                 "case_summary": {
                     "type": "string",
-                    "description": "Comeplete case summary including order details, refund history and customer complaint",
+                    "description": "Complete case summary including order details, refund history and customer complaint",
                 }
             },
             "required": ["case_summary"],
@@ -156,7 +155,7 @@ SUPPORT_TOOLS = [
 MANAGER_TOOLS = [
     {
         "name": "assess_fraud_risk",
-        "description":"Conusult the risk agent to assess fraud risk for a customer. User this when refund request looks suspicious or customer has mulitple refund requests. Pass the user_id to get a risk verdict.",
+        "description":"Consult the risk agent to assess fraud risk for a customer. Use this when refund request looks suspicious or customer has multiple refund requests. Pass the user_id to get a risk verdict.",
         "input_schema":{
             "type":"object",
             "properties": {
@@ -189,7 +188,7 @@ RISK_TOOLS = [
 
 
 # execute_tool - bridge between model and tools :
-def execute_tool(tool_name, tool_input):
+def execute_tool(tool_name, tool_input, conversation_id):
     if tool_name == "get_order_details":
         return get_order_details(tool_input["order_id"])
     
@@ -200,10 +199,10 @@ def execute_tool(tool_name, tool_input):
         return get_delivery_status(tool_input["tracking_number"], tool_input["carrier"])
     
     if tool_name == "escalate_to_manager":
-        return run_manager_agent(tool_input["case_summary"])
+        return run_manager_agent(tool_input["case_summary"], conversation_id=None)
     
     if tool_name == "assess_fraud_risk":
-        return run_risk_agent(tool_input["user_id"])
+        return run_risk_agent(tool_input["user_id"], conversation_id)
     
     if tool_name == "get_customer_risk_profile":
         return get_customer_risk_profile(tool_input["user_id"])
@@ -236,9 +235,14 @@ def run_support_agent(user_message, conversation_id, order_id, user_id):
             tool_result = []
             for block in response.content:
                 if block.type == "tool_use":
+                    # Log the tool call:
+                    AgentLog.objects.create(conversation=conversation, event_type="tool_call", message=f'calling tool {block.name} with {block.input}.')
 
                     # execute the tool :
-                    result = execute_tool(block.name, block.input)
+                    result = execute_tool(block.name, block.input, conversation.id)
+
+                    # log the tool result :
+                    AgentLog.objects.create(conversation=conversation, event_type="tool_result", message=f"{block.name} returned: {str(result)[:200]}")
 
                     tool_result.append(
                         {
@@ -252,10 +256,15 @@ def run_support_agent(user_message, conversation_id, order_id, user_id):
             )
             conversation_messages.append({"role": "user", "content": tool_result})
         else:
+            # log final reply :
+            AgentLog.objects.create(conversation=conversation, event_type="final", message=response.content[0].text)
             return response.content[0].text
 
 
-def run_manager_agent(case_summary):
+def run_manager_agent(case_summary, conversation_id):
+    conversation = Conversation.objects.get(pk=conversation_id)
+    # log manager message :
+    AgentLog.objects.create(conversation=conversation, event_type="manager", message=f"Case received for review: {case_summary[:200]}")
     manager_messages = [{"role": "user", "content": case_summary}]
 
     while True:
@@ -271,7 +280,10 @@ def run_manager_agent(case_summary):
             tool_results = []
             for block in response.content:
                 if block.type == "tool_use":
-                    result = execute_tool(block.name, block.input)
+                    # log manager tool call :
+                    AgentLog.objects.create(conversation=conversation, event_type="manager", message=f"consulting risk agent for fraud assessment.")
+
+                    result = execute_tool(block.name, block.input, conversation.id)
 
                     tool_results.append(
                         {
@@ -285,10 +297,17 @@ def run_manager_agent(case_summary):
 
             manager_messages.append({"role": "user", "content": tool_results})
         else:
+            # Log manager final decision
+            AgentLog.objects.create(conversation=conversation, event_type="manager", message=f"Decision: {response.content[0].text[:200]}")
             return response.content[0].text
 
 
-def run_risk_agent(user_id):
+def run_risk_agent(user_id, conversation_id):
+
+    conversation = Conversation.objects.get(pk=conversation_id)
+
+    # log risk assessment call :
+    AgentLog.objects.create(conversation=conversation, event_type="risk", message=f"Case received for fraud assessment on user: {user_id}")
 
     risk_messages = [
         {
@@ -310,7 +329,9 @@ def run_risk_agent(user_id):
             tool_messages = []
             for block in response.content:
                 if block.type == "tool_use":
-                    result = execute_tool(block.name, block.input)
+                    # Log tool call :
+                    AgentLog.objects.create(conversation=conversation, event_type="risk", message=f"Calling {block.name} to get customer risk profile.")
+                    result = execute_tool(block.name, block.input, conversation_id)
 
                     tool_messages.append(
                         {
@@ -325,4 +346,6 @@ def run_risk_agent(user_id):
             risk_messages.append({"role": "user", "content": tool_messages})
 
         else:
+            # log risk assessment final verdict :
+            AgentLog.objects.create(conversation=conversation, event_type="risk", message=f"Verdict : {response.content[0].text[:200]}")
             return response.content[0].text
