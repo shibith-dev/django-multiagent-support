@@ -34,7 +34,8 @@ Important rules :
  - Always check order details first before responding
  - Never approve or deny a refund yourself
  - If refund decision is needed - tell customer you are checking with your team.
-
+ - Never use bold text, bullet points, or any markdown formatting. Use plain text only.
+ - Keep replies concise and conversational. Maximum 3-4 sentences. No longer paragraphs.
 """
 
 # MANAGER - SYSTEM PROMPT
@@ -199,7 +200,7 @@ def execute_tool(tool_name, tool_input, conversation_id):
         return get_delivery_status(tool_input["tracking_number"], tool_input["carrier"])
     
     if tool_name == "escalate_to_manager":
-        return run_manager_agent(tool_input["case_summary"], conversation_id=None)
+        return run_manager_agent(tool_input["case_summary"], conversation_id)
     
     if tool_name == "assess_fraud_risk":
         return run_risk_agent(tool_input["user_id"], conversation_id)
