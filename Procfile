@@ -1,1 +1,1 @@
-web: gunicorn supportagent_main.wsgi
+web: gunicorn supportagent_main.wsgi --bind 0.0.0.0:$PORT 
