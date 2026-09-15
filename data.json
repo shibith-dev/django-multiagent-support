@@ -1,0 +1,1533 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2026-09-10T06:23:27.865Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "11",
+    "object_repr": "user: hello",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2026-09-10T06:23:27.866Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "10",
+    "object_repr": "user: hii",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2026-09-10T06:23:27.866Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "9",
+    "object_repr": "user: hello",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2026-09-10T06:23:27.866Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "8",
+    "object_repr": "user: hello",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2026-09-10T06:23:27.866Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "7",
+    "object_repr": "user: hello",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2026-09-10T06:23:27.866Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "6",
+    "object_repr": "user: helo",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2026-09-10T06:23:27.866Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "5",
+    "object_repr": "user: hello",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2026-09-10T06:23:27.866Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "user: hello",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2026-09-10T06:23:27.866Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "3",
+    "object_repr": "user: hello",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2026-09-10T06:23:27.866Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "user: hello",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2026-09-10T06:23:27.866Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "user: hello",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2026-09-10T06:43:55.032Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "21",
+    "object_repr": "user: hello",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2026-09-10T06:43:55.032Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "20",
+    "object_repr": "user: i am looking for my delivery status",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2026-09-10T06:43:55.032Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "19",
+    "object_repr": "agent: # Hello! 👋\n\nWelcome to CoolBreeze AC customer supp",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2026-09-10T06:43:55.032Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "18",
+    "object_repr": "user: hello",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2026-09-10T06:43:55.032Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "17",
+    "object_repr": "user: hello",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2026-09-10T06:43:55.032Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "16",
+    "object_repr": "user: hello",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2026-09-10T06:43:55.032Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "15",
+    "object_repr": "user: hello",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2026-09-10T06:43:55.032Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "14",
+    "object_repr": "user: hello",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2026-09-10T06:43:55.032Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "13",
+    "object_repr": "user: hello",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2026-09-10T06:43:55.032Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "12",
+    "object_repr": "user: hello",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2026-09-10T10:16:11.179Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "33",
+    "object_repr": "assistant: I'd be happy to get your order details! However, I",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2026-09-10T10:16:11.179Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "32",
+    "object_repr": "user: hello get me the order details",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2026-09-10T10:16:11.179Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "31",
+    "object_repr": "assistant: Hi there! I'm still standing by to assist you with",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2026-09-10T10:16:11.179Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "30",
+    "object_repr": "user: hello",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2026-09-10T10:16:11.179Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "29",
+    "object_repr": "assistant: Hey! I'm still here and ready to help. \n\nWere you ",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2026-09-10T10:16:11.179Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "28",
+    "object_repr": "user: heloo",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2026-09-10T10:16:11.179Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "27",
+    "object_repr": "assistant: Perfect! Let me pull up that information for you r",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2026-09-10T10:16:11.179Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "26",
+    "object_repr": "user: 389278327 is my order number",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2026-09-10T10:16:11.179Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "25",
+    "object_repr": "assistant: Of course! I'd be happy to help you check on your ",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2026-09-10T10:16:11.179Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "24",
+    "object_repr": "user: i would like to know about my delivery status",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2026-09-10T10:16:11.179Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "23",
+    "object_repr": "assistant: Hey there! 👋 Welcome to CoolBreeze AC customer sup",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2026-09-10T10:16:11.180Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "22",
+    "object_repr": "user: hello",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2026-09-10T10:17:40.171Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "35",
+    "object_repr": "assistant: I'll fetch the order details for you right away.",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2026-09-10T10:17:40.172Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "34",
+    "object_repr": "user: hello get me the order details",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2026-09-10T10:31:37.199Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "37",
+    "object_repr": "assistant: I'll retrieve the order details and delivery statu",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2026-09-10T10:31:37.199Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "36",
+    "object_repr": "user: get me the order details and delivery status",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2026-09-11T03:06:06.599Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "3",
+    "object_repr": "Conversation #3-rathan / Order #5",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2026-09-11T03:06:06.599Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "2",
+    "object_repr": "Conversation #2-rathan / Order #2",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2026-09-11T03:06:06.599Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "1",
+    "object_repr": "Conversation #1-rathan / Order #1",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2026-09-11T03:37:40.949Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "4",
+    "object_repr": "Conversation #4-rathan / Order #1",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2026-09-11T03:52:20.155Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "5",
+    "object_repr": "Conversation #5-rathan / Order #1",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2026-09-11T06:11:32.001Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "5",
+    "object_repr": "fraud_test",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2026-09-11T06:12:56.269Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "5",
+    "object_repr": "Amal",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Username\", \"First name\", \"Last name\", \"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2026-09-11T09:10:42.803Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "13",
+    "object_repr": "Refund for Order #13-denied",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Created at\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2026-09-11T09:11:03.133Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "10",
+    "object_repr": "Refund for Order #13-approved",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Created at\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2026-09-11T09:15:34.346Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "6",
+    "object_repr": "Conversation #6-rathan / Order #1",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2026-09-11T09:22:03.656Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "7",
+    "object_repr": "Conversation #7-rathan / Order #1",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2026-09-11T09:27:50.727Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "8",
+    "object_repr": "Conversation #8-rathan / Order #1",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2026-09-11T09:33:08.948Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "83",
+    "object_repr": "user: it is been more than a year i didn't receive the o",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2026-09-11T09:44:05.032Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "87",
+    "object_repr": "assistant: I appreciate you bringing this to me, and I unders",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2026-09-11T09:44:05.032Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "86",
+    "object_repr": "user: since it is been waiting for more than one year an",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 53,
+  "fields": {
+    "action_time": "2026-09-12T05:42:35.497Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "10",
+    "object_repr": "Conversation #10-Amal / Order #13",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 54,
+  "fields": {
+    "action_time": "2026-09-12T05:42:35.497Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "9",
+    "object_repr": "Conversation #9-rathan / Order #1",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 55,
+  "fields": {
+    "action_time": "2026-09-13T10:25:00.390Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "107",
+    "object_repr": "user: yes the amount is correct and not a single paisa i",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 56,
+  "fields": {
+    "action_time": "2026-09-13T10:26:40.929Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "108",
+    "object_repr": "user: yes the amount is correct and not a single paisa i",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 57,
+  "fields": {
+    "action_time": "2026-09-13T11:07:40.046Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "13",
+    "object_repr": "Order #13-CoolBreeze 2 Ton 3 Star Split AC-pending",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 58,
+  "fields": {
+    "action_time": "2026-09-13T11:07:55.118Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "13",
+    "object_repr": "Order #13-CoolBreeze 2 Ton 3 Star Split AC-cancelled",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 59,
+  "fields": {
+    "action_time": "2026-09-13T11:08:08.026Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "13",
+    "object_repr": "Order #13-CoolBreeze 2 Ton 3 Star Split AC-dispatched",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 60,
+  "fields": {
+    "action_time": "2026-09-13T11:08:29.491Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "13",
+    "object_repr": "Order #13-CoolBreeze 2 Ton 3 Star Split AC-cancelled",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 61,
+  "fields": {
+    "action_time": "2026-09-13T11:27:10.111Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "13",
+    "object_repr": "Order #13-CoolBreeze 2 Ton 3 Star Split AC-delivered",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 62,
+  "fields": {
+    "action_time": "2026-09-14T11:48:01.174Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "16",
+    "object_repr": "Conversation #16-rathan / Order #5",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 63,
+  "fields": {
+    "action_time": "2026-09-15T10:08:13.780Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "13",
+    "object_repr": "Conversation #13-rathan / Order #4",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 64,
+  "fields": {
+    "action_time": "2026-09-15T12:55:02.662Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "17",
+    "object_repr": "Conversation #17-rathan / Order #4",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 65,
+  "fields": {
+    "action_time": "2026-09-15T12:55:02.662Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "15",
+    "object_repr": "Conversation #15-rathan / Order #2",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 66,
+  "fields": {
+    "action_time": "2026-09-15T12:55:02.662Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "14",
+    "object_repr": "Conversation #14-rathan / Order #3",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 67,
+  "fields": {
+    "action_time": "2026-09-15T12:55:02.662Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "12",
+    "object_repr": "Conversation #12-Amal / Order #11",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 68,
+  "fields": {
+    "action_time": "2026-09-15T12:55:02.662Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "11",
+    "object_repr": "Conversation #11-Amal / Order #13",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$VjLjfihcS4q0Ftrm45CwBZ$b30/3ktzIC+t0iy/9Ar/byvIz9f/i0q7611F84U9mw0=",
+    "last_login": "2026-09-15T10:07:49.909Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "Admin",
+    "last_name": "",
+    "email": "admin@coolbreeze.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-01-01T00:00:00Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$VjLjfihcS4q0Ftrm45CwBZ$b30/3ktzIC+t0iy/9Ar/byvIz9f/i0q7611F84U9mw0=",
+    "last_login": "2026-09-14T10:25:33.431Z",
+    "is_superuser": false,
+    "username": "rathan",
+    "first_name": "Rathan",
+    "last_name": "Kumar",
+    "email": "rathan.kumar@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-01-01T00:00:00Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$VjLjfihcS4q0Ftrm45CwBZ$b30/3ktzIC+t0iy/9Ar/byvIz9f/i0q7611F84U9mw0=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "priya",
+    "first_name": "Priya",
+    "last_name": "Sharma",
+    "email": "priya.sharma@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-01-01T00:00:00Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$VjLjfihcS4q0Ftrm45CwBZ$b30/3ktzIC+t0iy/9Ar/byvIz9f/i0q7611F84U9mw0=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "arjun",
+    "first_name": "Arjun",
+    "last_name": "Nair",
+    "email": "arjun.nair@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-01-01T00:00:00Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$sVZis4iCXzaHoVs0QxYqk4$elLIXY2um/VVUW9tNzYsjewYjlyvCaNfiLO47mvOarU=",
+    "last_login": "2026-09-13T10:11:28.002Z",
+    "is_superuser": false,
+    "username": "Amal",
+    "first_name": "Amal",
+    "last_name": "Jith",
+    "email": "amal@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-01-01T00:00:00Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "7far9lyz8egwq8ijm2jrnsgs3uzs62hq",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAURO_C2hAoUPgu3fcM5AMfqRpISrsy3t026UKTWc17M2_mcVuL3zotfk7sygZ2-e0CxifVA6QH1nvjsdV1mQM_FH7SzqeW6HU73b-Dgr3sazKjwCyMcKijo0RSQQTSIamQiaKWOUQFFgAcWmtMEk7jII3aA6Nkny_7SDe0:1x2t1R:GHj1U35LQIH-CKMkmXdLd8P3MkENUMjldbWIQ7q9XPE",
+    "expire_date": "2026-09-19T16:13:41.631Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "aevbchgfzsqlewv6f8717xwxec3h4v3x",
+  "fields": {
+    "session_data": ".eJxVjDsOwyAQBe9CHaHFgGFTpvcZ0PILTiKQjF1FuXtsyUXSzsx7b-ZoW4vbelrcHNmVDezyyzyFZ6qHiA-q98ZDq-sye34k_LSdTy2m1-1s_w4K9bKvMQQDASPJpEhGk71W0u4MkcRgA6LQFsCPIyogpVOUSgBlY61MGTz7fAHfpjd7:1x4A9D:jEmNiO6BrKrWMnNSXKNo1G_1Cpn2HajcX6JIofNsN18",
+    "expire_date": "2026-09-23T04:42:59.418Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ake3isjc8af1dbb4uwcpdtelxzw2wi7q",
+  "fields": {
+    "session_data": ".eJxVjDsOwyAQBe9CHaHFgGFTpvcZ0PILTiKQjF1FuXtsyUXSzsx7b-ZoW4vbelrcHNmVDezyyzyFZ6qHiA-q98ZDq-sye34k_LSdTy2m1-1s_w4K9bKvMQQDASPJpEhGk71W0u4MkcRgA6LQFsCPIyogpVOUSgBlY61MGTz7fAHfpjd7:1x63sT:VgiZxn8FKvTHtP9EJg9VYiidP9MN0r1F3sLlCLUNULY",
+    "expire_date": "2026-09-28T10:25:33.444Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "g54yn123f3634k6ctux5ppek8v6ywg8u",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pBBoDAu3XsGMgwgVUOT0q6Md7dNutDte-__twi0LjWsPc9hTOIilDj9skj8zG0X6UHtPkme2jKPUe6JPGyXtynl1_Vo_w4q9bqtkdkBYyKdDenkSrRG-40hkjp7RlTWA8RhQANkbE7aKKDivNe5QBSfL98NN3o:1x64Fs:wFrPuZxPpvkk2fTUx_5yaafykRYPFrQMjaMhju-T_D0",
+    "expire_date": "2026-09-28T10:49:44.453Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ggart7fyacgthvtdrv5eayk0elnc272p",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pBBoDAu3XsGMgwgVUOT0q6Md7dNutDte-__twi0LjWsPc9hTOIilDj9skj8zG0X6UHtPkme2jKPUe6JPGyXtynl1_Vo_w4q9bqtkdkBYyKdDenkSrRG-40hkjp7RlTWA8RhQANkbE7aKKDivNe5QBSfL98NN3o:1x4uU0:74QhBuJZWFVW4DRnuS_d9OxRvtCoUrdMvRhOu5ITjC8",
+    "expire_date": "2026-09-25T06:11:32.044Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "nnn38sc99ot1uhhpq36f9ldyv1dgjhdh",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pBBoDAu3XsGMgwgVUOT0q6Md7dNutDte-__twi0LjWsPc9hTOIilDj9skj8zG0X6UHtPkme2jKPUe6JPGyXtynl1_Vo_w4q9bqtkdkBYyKdDenkSrRG-40hkjp7RlTWA8RhQANkbE7aKKDivNe5QBSfL98NN3o:1x6Q4r:8VD4VY7r6T-1XplKLRzrLMg4va1rQvcEXqAiVCH-ru8",
+    "expire_date": "2026-09-29T10:07:49.930Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "pnwjjtij1t7lmhse9z4b2991u5szhxd4",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSEMb1y69xsInQGpGkhKuzL-uzbpQrf3nHNfLKZtrXEbeYkzsTMz7PS7TQkfue2A7qndOsfe1mWe-K7wgw5-7ZSfl8P9O6hp1G9dEgVQXmHWjtBCBi2DB6PRaEVSKovGCRSyCBeQipI-uxK0ADIAFtn7A9FxNxQ:1x5hBI:EHeN6UQ_jgAAt6t49x7foEHy0i9EAUpaOLHFwPzGqlo",
+    "expire_date": "2026-09-27T10:11:28.008Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "qmqgkgpl1b4ev40mnedn1bgqtt4eqiv1",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pBBoDAu3XsGMgwgVUOT0q6Md7dNutDte-__twi0LjWsPc9hTOIilDj9skj8zG0X6UHtPkme2jKPUe6JPGyXtynl1_Vo_w4q9bqtkdkBYyKdDenkSrRG-40hkjp7RlTWA8RhQANkbE7aKKDivNe5QBSfL98NN3o:1x6NAL:CovUDlTU0zra3Uy_h_Y4BI0hAvO8KV8GxdXXmNtiFas",
+    "expire_date": "2026-09-29T07:01:17.574Z"
+  }
+},
+{
+  "model": "orders.product",
+  "pk": 1,
+  "fields": {
+    "name": "CoolBreeze 1 Ton 3 Star Window AC",
+    "description": "Energy efficient 1 ton window AC with 3 star rating, auto restart, sleep mode and dust filter. Ideal for rooms up to 120 sq ft.",
+    "price": "28999.00",
+    "category": "Window AC",
+    "in_stock": true
+  }
+},
+{
+  "model": "orders.product",
+  "pk": 2,
+  "fields": {
+    "name": "CoolBreeze 1.5 Ton 3 Star Split AC",
+    "description": "1.5 ton split AC with 3 star rating, turbo cool technology, auto clean and dehumidifier function. Ideal for rooms up to 180 sq ft.",
+    "price": "34999.00",
+    "category": "Split AC",
+    "in_stock": true
+  }
+},
+{
+  "model": "orders.product",
+  "pk": 3,
+  "fields": {
+    "name": "CoolBreeze 1.5 Ton 5 Star Inverter Split AC",
+    "description": "Premium 1.5 ton inverter split AC with 5 star rating, wifi control, auto diagnosis and 4 way swing. Ideal for rooms up to 180 sq ft.",
+    "price": "42999.00",
+    "category": "Split AC",
+    "in_stock": true
+  }
+},
+{
+  "model": "orders.product",
+  "pk": 4,
+  "fields": {
+    "name": "CoolBreeze 2 Ton 3 Star Split AC",
+    "description": "Heavy duty 2 ton split AC with 3 star rating, rapid cooling, self cleaning filter and auto restart after power cut. Ideal for rooms up to 240 sq ft.",
+    "price": "45999.00",
+    "category": "Split AC",
+    "in_stock": true
+  }
+},
+{
+  "model": "orders.product",
+  "pk": 5,
+  "fields": {
+    "name": "CoolBreeze 1 Ton 5 Star Inverter Split AC",
+    "description": "Compact 1 ton inverter split AC with 5 star rating, voice control, pm 2.5 filter and weekly timer. Ideal for rooms up to 120 sq ft.",
+    "price": "38999.00",
+    "category": "Split AC",
+    "in_stock": true
+  }
+},
+{
+  "model": "orders.product",
+  "pk": 6,
+  "fields": {
+    "name": "CoolBreeze 2 Ton 5 Star Inverter Cassette AC",
+    "description": "Commercial grade 2 ton cassette AC with 5 star inverter rating, 360 degree airflow, central drain pump and remote diagnostics. Ideal for offices up to 300 sq ft.",
+    "price": "68999.00",
+    "category": "Cassette AC",
+    "in_stock": true
+  }
+},
+{
+  "model": "orders.product",
+  "pk": 7,
+  "fields": {
+    "name": "CoolBreeze 1.5 Ton Portable AC",
+    "description": "No installation required portable AC with 1.5 ton capacity, dual fan speed, dehumidifier mode and 24 hour timer. Ideal for temporary cooling needs.",
+    "price": "32999.00",
+    "category": "Portable AC",
+    "in_stock": true
+  }
+},
+{
+  "model": "orders.product",
+  "pk": 8,
+  "fields": {
+    "name": "CoolBreeze 2 Ton Tower AC",
+    "description": "Floor standing 2 ton tower AC with inverter technology, 7 speed fan, air purifier with HEPA filter and child lock. Ideal for large halls up to 280 sq ft.",
+    "price": "55999.00",
+    "category": "Tower AC",
+    "in_stock": true
+  }
+},
+{
+  "model": "orders.product",
+  "pk": 9,
+  "fields": {
+    "name": "CoolBreeze AC Voltage Stabilizer 5KVA",
+    "description": "Heavy duty voltage stabilizer for ACs up to 2 ton. Protects against voltage fluctuations between 90V to 290V with time delay and digital display.",
+    "price": "4999.00",
+    "category": "Accessories",
+    "in_stock": true
+  }
+},
+{
+  "model": "orders.product",
+  "pk": 10,
+  "fields": {
+    "name": "CoolBreeze Universal AC Remote Control",
+    "description": "Universal remote compatible with all CoolBreeze AC models. Features LCD display, timer, sleep mode and turbo button. Includes 2 AAA batteries.",
+    "price": "899.00",
+    "category": "Accessories",
+    "in_stock": true
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "product": 3,
+    "product_name": "CoolBreeze 1.5 Ton 5 Star Inverter Split AC",
+    "amount": "42999.00",
+    "status": "dispatched",
+    "carrier": "BlueDart",
+    "tracking_number": "BD99281733",
+    "delivery": "14, Residency Road, Shivajinagar, Bangalore - 560025",
+    "created_at": "2025-04-26T10:30:00Z",
+    "updated_at": "2025-04-26T10:30:00Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "product": 2,
+    "product_name": "CoolBreeze 1.5 Ton 3 Star Split AC",
+    "amount": "34999.00",
+    "status": "delivered",
+    "carrier": "Delhivery",
+    "tracking_number": "DL44729103",
+    "delivery": "14, Residency Road, Shivajinagar, Bangalore - 560025",
+    "created_at": "2025-03-11T14:00:00Z",
+    "updated_at": "2025-03-11T14:00:00Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 3,
+  "fields": {
+    "user": 2,
+    "product": 9,
+    "product_name": "CoolBreeze AC Voltage Stabilizer 5KVA",
+    "amount": "4999.00",
+    "status": "delivered",
+    "carrier": "Delhivery",
+    "tracking_number": "DL88103742",
+    "delivery": "14, Residency Road, Shivajinagar, Bangalore - 560025",
+    "created_at": "2025-02-16T09:15:00Z",
+    "updated_at": "2025-02-16T09:15:00Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 4,
+  "fields": {
+    "user": 2,
+    "product": 10,
+    "product_name": "CoolBreeze Universal AC Remote Control",
+    "amount": "899.00",
+    "status": "cancelled",
+    "carrier": "",
+    "tracking_number": "",
+    "delivery": "14, Residency Road, Shivajinagar, Bangalore - 560025",
+    "created_at": "2025-04-28T16:45:00Z",
+    "updated_at": "2025-04-28T16:45:00Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 5,
+  "fields": {
+    "user": 2,
+    "product": 5,
+    "product_name": "CoolBreeze 1 Ton 5 Star Inverter Split AC",
+    "amount": "38999.00",
+    "status": "pending",
+    "carrier": "",
+    "tracking_number": "",
+    "delivery": "14, Residency Road, Shivajinagar, Bangalore - 560025",
+    "created_at": "2025-04-30T20:00:00Z",
+    "updated_at": "2025-04-30T20:00:00Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 6,
+  "fields": {
+    "user": 3,
+    "product": 6,
+    "product_name": "CoolBreeze 2 Ton 5 Star Inverter Cassette AC",
+    "amount": "68999.00",
+    "status": "dispatched",
+    "carrier": "Ekart",
+    "tracking_number": "EK556612309",
+    "delivery": "7, Linking Road, Bandra West, Mumbai - 400050",
+    "created_at": "2025-04-27T11:00:00Z",
+    "updated_at": "2025-04-27T11:00:00Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 7,
+  "fields": {
+    "user": 3,
+    "product": 4,
+    "product_name": "CoolBreeze 2 Ton 3 Star Split AC",
+    "amount": "45999.00",
+    "status": "delivered",
+    "carrier": "BlueDart",
+    "tracking_number": "BD77412390",
+    "delivery": "7, Linking Road, Bandra West, Mumbai - 400050",
+    "created_at": "2025-03-01T08:30:00Z",
+    "updated_at": "2025-03-01T08:30:00Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 8,
+  "fields": {
+    "user": 4,
+    "product": 1,
+    "product_name": "CoolBreeze 1 Ton 3 Star Window AC",
+    "amount": "28999.00",
+    "status": "delivered",
+    "carrier": "Delhivery",
+    "tracking_number": "DL33219876",
+    "delivery": "23, Anna Salai, Teynampet, Chennai - 600018",
+    "created_at": "2025-03-15T13:20:00Z",
+    "updated_at": "2025-03-15T13:20:00Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 9,
+  "fields": {
+    "user": 4,
+    "product": 8,
+    "product_name": "CoolBreeze 2 Ton Tower AC",
+    "amount": "55999.00",
+    "status": "dispatched",
+    "carrier": "BlueDart",
+    "tracking_number": "BD10293847",
+    "delivery": "23, Anna Salai, Teynampet, Chennai - 600018",
+    "created_at": "2025-04-25T17:10:00Z",
+    "updated_at": "2025-04-25T17:10:00Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 10,
+  "fields": {
+    "user": 3,
+    "product": 7,
+    "product_name": "CoolBreeze 1.5 Ton Portable AC",
+    "amount": "32999.00",
+    "status": "pending",
+    "carrier": "",
+    "tracking_number": "",
+    "delivery": "7, Linking Road, Bandra West, Mumbai - 400050",
+    "created_at": "2025-05-01T10:00:00Z",
+    "updated_at": "2025-05-01T10:00:00Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 11,
+  "fields": {
+    "user": 5,
+    "product": 1,
+    "product_name": "CoolBreeze 1.5 Ton 5 Star Inverter Split AC",
+    "amount": "42999.00",
+    "status": "delivered",
+    "carrier": "BlueDart",
+    "tracking_number": "BD11111111",
+    "delivery": "22, MG Road, Pune - 411001",
+    "created_at": "2025-01-10T10:00:00Z",
+    "updated_at": "2025-01-10T10:00:00Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 12,
+  "fields": {
+    "user": 5,
+    "product": 2,
+    "product_name": "CoolBreeze 1.5 Ton 3 Star Split AC",
+    "amount": "34999.00",
+    "status": "delivered",
+    "carrier": "Delhivery",
+    "tracking_number": "DL22222222",
+    "delivery": "22, MG Road, Pune - 411001",
+    "created_at": "2025-02-05T10:00:00Z",
+    "updated_at": "2025-02-05T10:00:00Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 13,
+  "fields": {
+    "user": 5,
+    "product": 3,
+    "product_name": "CoolBreeze 2 Ton 3 Star Split AC",
+    "amount": "45999.00",
+    "status": "delivered",
+    "carrier": "BlueDart",
+    "tracking_number": "BD33333333",
+    "delivery": "22, MG Road, Pune - 411001",
+    "created_at": "2025-03-01T10:00:00Z",
+    "updated_at": "2026-09-13T11:27:10.107Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 14,
+  "fields": {
+    "user": 5,
+    "product": 4,
+    "product_name": "CoolBreeze 1 Ton 5 Star Inverter Split AC",
+    "amount": "38999.00",
+    "status": "delivered",
+    "carrier": "Ekart",
+    "tracking_number": "EK44444444",
+    "delivery": "22, MG Road, Pune - 411001",
+    "created_at": "2025-03-20T10:00:00Z",
+    "updated_at": "2025-03-20T10:00:00Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 15,
+  "fields": {
+    "user": 5,
+    "product": 5,
+    "product_name": "CoolBreeze 2 Ton 5 Star Inverter Cassette AC",
+    "amount": "68999.00",
+    "status": "delivered",
+    "carrier": "BlueDart",
+    "tracking_number": "BD55555555",
+    "delivery": "22, MG Road, Pune - 411001",
+    "created_at": "2025-04-10T10:00:00Z",
+    "updated_at": "2025-04-10T10:00:00Z"
+  }
+},
+{
+  "model": "orders.refundrequest",
+  "pk": 1,
+  "fields": {
+    "order": 3,
+    "user": 2,
+    "reason": "Stabilizer stopped working after 3 days. AC not turning on.",
+    "status": "approved",
+    "created_at": "2025-02-20T10:00:00Z"
+  }
+},
+{
+  "model": "orders.refundrequest",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "user": 2,
+    "reason": "AC is making loud noise during operation. Not acceptable.",
+    "status": "denied",
+    "created_at": "2025-03-20T14:30:00Z"
+  }
+},
+{
+  "model": "orders.refundrequest",
+  "pk": 3,
+  "fields": {
+    "order": 7,
+    "user": 3,
+    "reason": "AC not cooling properly even after installation by technician.",
+    "status": "approved",
+    "created_at": "2025-03-10T09:00:00Z"
+  }
+},
+{
+  "model": "orders.refundrequest",
+  "pk": 4,
+  "fields": {
+    "order": 8,
+    "user": 4,
+    "reason": "Window AC leaking water inside the room.",
+    "status": "pending",
+    "created_at": "2025-03-25T16:00:00Z"
+  }
+},
+{
+  "model": "orders.refundrequest",
+  "pk": 5,
+  "fields": {
+    "order": 1,
+    "user": 2,
+    "reason": "AC dispatched 5 days ago but not delivered yet. Want refund.",
+    "status": "pending",
+    "created_at": "2025-04-30T11:00:00Z"
+  }
+},
+{
+  "model": "orders.refundrequest",
+  "pk": 6,
+  "fields": {
+    "order": 11,
+    "user": 5,
+    "reason": "AC stopped working after 2 days",
+    "status": "approved",
+    "created_at": "2025-01-12T10:00:00Z"
+  }
+},
+{
+  "model": "orders.refundrequest",
+  "pk": 7,
+  "fields": {
+    "order": 11,
+    "user": 5,
+    "reason": "Wrong model delivered",
+    "status": "denied",
+    "created_at": "2025-01-20T10:00:00Z"
+  }
+},
+{
+  "model": "orders.refundrequest",
+  "pk": 8,
+  "fields": {
+    "order": 12,
+    "user": 5,
+    "reason": "AC making loud noise",
+    "status": "denied",
+    "created_at": "2025-02-08T10:00:00Z"
+  }
+},
+{
+  "model": "orders.refundrequest",
+  "pk": 9,
+  "fields": {
+    "order": 12,
+    "user": 5,
+    "reason": "Product not as described",
+    "status": "denied",
+    "created_at": "2025-02-15T10:00:00Z"
+  }
+},
+{
+  "model": "orders.refundrequest",
+  "pk": 10,
+  "fields": {
+    "order": 13,
+    "user": 5,
+    "reason": "AC not cooling properly",
+    "status": "approved",
+    "created_at": "2026-07-05T10:00:00Z"
+  }
+},
+{
+  "model": "orders.refundrequest",
+  "pk": 11,
+  "fields": {
+    "order": 14,
+    "user": 5,
+    "reason": "Received damaged product",
+    "status": "denied",
+    "created_at": "2025-03-25T10:00:00Z"
+  }
+},
+{
+  "model": "orders.refundrequest",
+  "pk": 12,
+  "fields": {
+    "order": 15,
+    "user": 5,
+    "reason": "AC compressor not working",
+    "status": "pending",
+    "created_at": "2025-04-12T10:00:00Z"
+  }
+},
+{
+  "model": "orders.refundrequest",
+  "pk": 13,
+  "fields": {
+    "order": 13,
+    "user": 5,
+    "reason": "Want to return — changed my mind",
+    "status": "denied",
+    "created_at": "2026-08-10T10:00:00Z"
+  }
+}
+]
