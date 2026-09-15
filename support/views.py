@@ -1,12 +1,13 @@
 from django.shortcuts import render
 import json
-from django.http import JsonResponse
+from django.http import JsonResponse, StreamingHttpResponse
 import time
 from django.shortcuts import get_object_or_404
 from orders.models import Order
 from .models import Conversation, Message
 from .agents import run_support_agent
 from django.contrib.admin.views.decorators import staff_member_required
+from .event_queue import subscribe, unsubscribe, publish, DONE
 
 # Create your views here.
 
@@ -26,6 +27,9 @@ def chat(request, order_id):
         conversation, created = Conversation.objects.get_or_create(
             user=request.user, order=order
         )
+
+        event = {"type": "user_message", "message": user_message, "name": request.user.username}
+        publish(conversation.id, event)
 
         # append the new user_message to the conversation :
         Message.objects.create(
@@ -52,6 +56,7 @@ def dashboard(request):
     return render(request, "support/dashboard.html", context)
 
 
+@staff_member_required
 def conversation_detail(request, conversation_id):
     conversation = get_object_or_404(Conversation, pk=conversation_id)
     messages = conversation.messages.order_by("created_at")
@@ -64,3 +69,16 @@ def conversation_detail(request, conversation_id):
     }
 
     return render(request, "support/conversation_detail.html", context)
+
+
+
+def conversation_stream(request, conversation_id):
+    def event_stream(conversation_id):
+        q = subscribe(conversation_id)
+        try:
+            while True:
+                event = q.get() # que.get() will actually wait for the next event to come.
+                yield f"data: {json.dumps(event)}\n\n"
+        finally:
+            unsubscribe(conversation_id, q)
+    return StreamingHttpResponse(event_stream(conversation_id), content_type="text/event-stream")
