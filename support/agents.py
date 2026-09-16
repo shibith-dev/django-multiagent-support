@@ -5,6 +5,7 @@ from .tools import (
     get_refund_history,
     get_delivery_status,
     get_customer_risk_profile,
+    search_knowledge_base,
 )
 from .models import Conversation, AgentLog
 from .event_queue import publish, DONE
@@ -152,6 +153,21 @@ SUPPORT_TOOLS = [
             "required": ["case_summary"],
         },
     },
+    {
+        "name": "search_knowledge_base",
+        "description": "Search CoolBreeze AC company documents including refund policy, warranty policy and product FAQs. Use this when customer asks about company policies, warranty coverage, warranty claims, refund eligibility, or any general product information that requires accurate company documentation",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "The search query to find the relevant information from company documents. Be specific - for example 'refund eligibility within 30 days' instead of just saying refund.",
+                }
+            },
+            "required": ["query"],
+        },
+    },
+
 ]
 
 MANAGER_TOOLS = [
@@ -208,6 +224,9 @@ def execute_tool(tool_name, tool_input, conversation_id):
     
     if tool_name == "get_customer_risk_profile":
         return get_customer_risk_profile(tool_input["user_id"])
+
+    if tool_name == "search_knowledge_base":
+        return search_knowledge_base(tool_input["query"])
 
 
 # Agent Loop - While loop that loops until the task is done

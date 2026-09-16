@@ -2,6 +2,7 @@ from orders.models import Order, RefundRequest
 from django.utils import timezone
 from datetime import timedelta
 from .tracking_data import DELIVERY_DATA
+from .rag import search_knowledge_base as rag_search
 
 
 
@@ -81,3 +82,8 @@ def get_customer_risk_profile(user_id):
         "pending": pending,
         "refund_to_order_ratio": refund_to_orders_ratio
     }
+
+# Wrapper function for Rag search:
+def search_knowledge_base(query):
+    result = rag_search(query)
+    return {"result": result}
